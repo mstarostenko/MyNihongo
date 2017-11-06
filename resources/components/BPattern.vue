@@ -2,12 +2,13 @@
   article.b-pattern
     header.b-pattern__header
       .b-pattern__title.title.orange--text PATTERN
-      | {{ pattern.tree }}
+      | {{ pattern.tree.value }}
       hr
       hr
 
       b-tree(
-       :nodes="pattern.tree"
+       :nodes="pattern.tree.nodes",
+       :nodeValue="pattern.tree.value"
       )
 
       <!-- .b&#45;pattern__sample( -->

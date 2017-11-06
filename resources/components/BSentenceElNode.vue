@@ -1,12 +1,19 @@
 <template lang="pug">
-  .b-sentence-el-node BSentenceElNode TEXT
+  .b-sentence-el.red
+    | {{ value.unitName }}
 
 </template>
 
 <script>
 
 export default {
-  name: 'BSentenceElNode'
+  name: 'BSentenceElNode',
+
+  props: {
+    value: {
+      type: Object
+    }
+  }
 }
 
 </script>

@@ -1,12 +1,20 @@
 <template lang="pug">
-  .b-sentence-role-node SentenceRoleNode TEXT
+  .b-sentence-role.blue
+    | {{ value.unitName }}
+    slot
 
 </template>
 
 <script>
 
 export default {
-  name: 'BSentenceRoleNode'
+  name: 'BSentenceRoleNode',
+
+  props: {
+    value: {
+      type: Object
+    }
+  }
 }
 
 </script>
