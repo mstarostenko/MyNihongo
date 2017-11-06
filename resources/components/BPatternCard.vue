@@ -1,6 +1,7 @@
 <template lang="pug">
   article.b-pattern-pcard
-    | PCARD
+    header.b-pattern-pcard
+      .b-pattern-pcard__title.headline.red--text PCARD
 
     article.b-pattern-card__pattern(
       v-for="pattern in collection"
@@ -21,7 +22,7 @@ export default {
 
   props: {
     collection: {
-      type: Object,
+      type: Array,
       required: true
     }
   }

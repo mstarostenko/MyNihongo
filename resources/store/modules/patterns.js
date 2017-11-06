@@ -6,36 +6,82 @@ const state = () => ({
 
       pattern: {
         tree: [
+          // CLAUSE
           {
-            semantic_type: 'clause',
+            value: {
+              unitName: 'clause',
+              unitClass: 'clause',
+              unitProps: {
+                begin: 'notExact',
+                end: 'notExact'
+              }
+            },
 
-            leaves: [
+            // CLAUSE NODES
+            nodes: [
+              // подлежащее 話すこと
               {
-                semantic_type: 'sentence_role',
-                value: 'predicate',
-                leaves: [
+                value: {
+                  unitName: 'subject',
+                  unitClass: 'sentence_role',
+                  unitProps: {}
+                },
+                nodes: [
                   {
-                    semantic_type: 'sentence_el',
-                    value: 'verb'
+                  // глагол 話す
+                    value: {
+                      unitName: 'verb',
+                      unitClass: 'sentence_el',
+                      unitProps: {
+                        isRuleAccent: false
+                      }
+                    }
                   },
+                  // субстантиватор こと
                   {
-                    semantic_type: 'sentence_el',
-                    value: 'substantivator'
+                    value: {
+                      unitName: 'substantivator',
+                      unitClass: 'sentence_el',
+                      unitProps: {
+                        isRuleAccent: false
+                      }
+                    }
                   }
                 ]
               },
 
-              // 2
+              // частица ga
               {
-                semantic_type: 'sentence_el',
-                value: 'が'
-              }
-            ],
+                value: {
+                  unitName: 'particle',
+                  unitClass: 'sentence_el',
+                  unitProps: {
+                    isRuleAccent: true
+                  }
+                }
+              },
 
-            value: {
-              begin: 'notExact',
-              end: 'notExact'
-            }
+              // сказуемое
+              {
+                value: {
+                  unitName: 'predicate',
+                  unitClass: 'sentence_role',
+                  unitProps: {}
+                },
+                nodes: [
+                  // глагол
+                  {
+                    value: {
+                      unitName: 'verb',
+                      unitClass: 'sentence_el',
+                      unitProps: {
+                        isRuleAccent: true
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
           }
         ],
 
