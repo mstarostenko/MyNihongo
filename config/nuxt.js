@@ -70,7 +70,7 @@ module.exports = {
     vendor: [
       '~/plugins/vuetify.js'
     ],
-    extractCSS: true,
+    // extractCSS: true,
     /*
     ** Run ESLint on save
     */
