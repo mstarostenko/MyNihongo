@@ -34,26 +34,24 @@
 </template>
 
 <script>
-
-import BClauseNode from '../components/BClauseNode'
-import BSentenceRoleNode from '../components/BSentenceRoleNode'
-import BSentenceElNode from '../components/BSentenceElNode'
-import BTree from '../components/BTree'
-
-export default {
-  name: 'BPattern',
-  components: {
-    BClauseNode,
-    BSentenceRoleNode,
-    BSentenceElNode,
-    BTree
-  },
-
-  props: {
-    pattern: {
-      type: Object
+    import BClauseNode from '../components/BClauseNode'
+    import BSentenceRoleNode from '../components/BSentenceRoleNode'
+    import BSentenceElNode from '../components/BSentenceElNode'
+    import BTree from '../components/BTree'
+    
+    export default {
+      name: 'BPattern',
+      components: {
+        BClauseNode,
+        BSentenceRoleNode,
+        BSentenceElNode,
+        BTree
+      },
+    
+      props: {
+        pattern: {
+          type: Object
+        }
+      }
     }
-  }
-}
-
 </script>

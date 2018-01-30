@@ -12,7 +12,7 @@
     "build": "node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js",
     "precommit": "npm run lint",
-    "lint": "standard && eslint --ext .js,.vue resources/"
+    "lint": "eslint --ext .js,.vue resources/"
   },
   "dependencies": {
     "adonis-ace": "^3.0.6",
@@ -25,16 +25,9 @@
     "adonis-websocket": "^1.0.2",
     "cross-env": "^3.1.4",
     "nuxt": "latest",
-    "standard": "^8.6.0",
     "vue-material": "^0.8.1",
     "vuetify": "^0.16.9",
     "youch": "^2.0.4"
-  },
-  "standard": {
-    "global": [
-      "use",
-      "make"
-    ]
   },
   "autoload": {
     "App": "./app"
@@ -42,21 +35,21 @@
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-imports": "^1.4.1",
-    "eslint": "^3.13.1",
-    "eslint-config-standard": "^6.2.1",
+    "eslint": "^4.11.0",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "postcss-reduce-idents": "^2.4.0",
     "pug": "^2.0.0-rc.4",
     "sass-loader": "^6.0.6",
-    "standard": "^8.6.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "vuetify-loader": "^0.1.0"
+    "vuetify-loader": "^0.1.0",
+    "eslint-plugin-vue": "^3.13.1",
+    "eslint-config-airbnb-base": "^12.1.0"
   }
 }

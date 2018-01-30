@@ -1,11 +1,11 @@
-'use strict'
 
-const Env = use('Env')
-const Helpers = use('Helpers')
+
+const Env = use('Env');
+const Helpers = use('Helpers');
 
 module.exports = {
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Default Connection
   |--------------------------------------------------------------------------
@@ -14,9 +14,9 @@ module.exports = {
   | interacting with SQL databases.
   |
   */
-  connection: Env.get('DB_CONNECTION', 'sqlite'),
+    connection: Env.get('DB_CONNECTION', 'sqlite'),
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Sqlite
   |--------------------------------------------------------------------------
@@ -27,15 +27,15 @@ module.exports = {
   | npm i --save sqlite3
   |
   */
-  sqlite: {
-    client: 'sqlite3',
-    connection: {
-      filename: Helpers.databasePath('development.sqlite')
+    sqlite: {
+        client: 'sqlite3',
+        connection: {
+            filename: Helpers.databasePath('development.sqlite'),
+        },
+        useNullAsDefault: true,
     },
-    useNullAsDefault: true
-  },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | MySQL
   |--------------------------------------------------------------------------
@@ -45,17 +45,17 @@ module.exports = {
   | npm i --save mysql
   |
   */
-  mysql: {
-    client: 'mysql',
-    connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
-    }
-  },
+    mysql: {
+        client: 'mysql',
+        connection: {
+            host: Env.get('DB_HOST', 'localhost'),
+            user: Env.get('DB_USER', 'root'),
+            password: Env.get('DB_PASSWORD', ''),
+            database: Env.get('DB_DATABASE', 'adonis'),
+        },
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | PostgreSQL
   |--------------------------------------------------------------------------
@@ -65,14 +65,14 @@ module.exports = {
   | npm i --save pg
   |
   */
-  pg: {
-    client: 'pg',
-    connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
-    }
-  }
+    pg: {
+        client: 'pg',
+        connection: {
+            host: Env.get('DB_HOST', 'localhost'),
+            user: Env.get('DB_USER', 'root'),
+            password: Env.get('DB_PASSWORD', ''),
+            database: Env.get('DB_DATABASE', 'adonis'),
+        },
+    },
 
-}
+};

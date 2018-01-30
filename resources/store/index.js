@@ -1,19 +1,19 @@
-import Vuex from 'vuex'
-import patterns from './modules/patterns'
+import Vuex from 'vuex';
+import patterns from './modules/patterns';
 
 /**
  * This our global state for our app.
  */
 const createStore = () => new Vuex.Store({
-  state: {
-  },
+    state: {
+    },
 
-  mutations: {
-  },
+    mutations: {
+    },
 
-  modules: {
-    patterns
-  }
-})
+    modules: {
+        patterns,
+    },
+});
 
-export default createStore
+export default createStore;

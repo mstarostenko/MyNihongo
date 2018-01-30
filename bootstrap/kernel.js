@@ -1,4 +1,4 @@
-'use strict'
+
 
 /*
 |--------------------------------------------------------------------------
@@ -10,18 +10,19 @@
 |
 */
 
-const app = require('./app')
-const fold = require('adonis-fold')
-const Ace = require('adonis-ace')
-const path = require('path')
-const packageFile = path.join(__dirname, '../package.json')
-require('./extend')
+const app = require('./app');
+const fold = require('adonis-fold');
+const Ace = require('adonis-ace');
+const path = require('path');
+
+const packageFile = path.join(__dirname, '../package.json');
+require('./extend');
 
 module.exports = function () {
-  fold.Registrar
-    .register(app.providers.concat(app.aceProviders))
-    .then(() => {
-      /*
+    fold.Registrar
+        .register(app.providers.concat(app.aceProviders))
+        .then(() => {
+            /*
       |--------------------------------------------------------------------------
       | Register Aliases
       |--------------------------------------------------------------------------
@@ -30,9 +31,9 @@ module.exports = function () {
       | providers can be referenced with short sweet names.
       |
       */
-      fold.Ioc.aliases(app.aliases)
+            fold.Ioc.aliases(app.aliases);
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Register Package File
       |--------------------------------------------------------------------------
@@ -42,10 +43,10 @@ module.exports = function () {
       | to setup autoloading.
       |
       */
-      const Helpers = use('Helpers')
-      Helpers.load(packageFile, fold.Ioc)
+            const Helpers = use('Helpers');
+            Helpers.load(packageFile, fold.Ioc);
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Register Events
       |--------------------------------------------------------------------------
@@ -54,9 +55,9 @@ module.exports = function () {
       | events.js file.
       |
       */
-      require('./events')
+            require('./events');
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Load Middleware And Routes
       |--------------------------------------------------------------------------
@@ -65,10 +66,10 @@ module.exports = function () {
       | require defined files for same.
       |
       */
-      use(Helpers.makeNameSpace('Http', 'kernel'))
-      use(Helpers.makeNameSpace('Http', 'routes'))
+            use(Helpers.makeNameSpace('Http', 'kernel'));
+            use(Helpers.makeNameSpace('Http', 'routes'));
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Load Database Factory
       |--------------------------------------------------------------------------
@@ -77,9 +78,9 @@ module.exports = function () {
       | autoload it to be used inside the entire application.
       |
       */
-      use(Helpers.databasePath('factory'))
+            use(Helpers.databasePath('factory'));
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Register/Invoke Commands
       |--------------------------------------------------------------------------
@@ -88,8 +89,8 @@ module.exports = function () {
       | executed command. It's so simple :)
       |
       */
-      Ace.register(app.commands)
-      Ace.invoke(require(packageFile))
-    })
-    .catch((error) => console.error(error.stack))
-}
+            Ace.register(app.commands);
+            Ace.invoke(require(packageFile));
+        })
+        .catch((error) => console.error(error.stack));
+};

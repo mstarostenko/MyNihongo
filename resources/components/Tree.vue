@@ -21,10 +21,10 @@
 
 <script>
 
-import BTree from '../components/BTree.vue'
-import BClauseNode from '../components/BClauseNode'
-import BSentenceRoleNode from '../components/BSentenceRoleNode'
-import BSentenceElNode from '../components/BSentenceElNode'
+import Tree from '../components/Tree'
+import ClauseNode from '../components/ClauseNode'
+import SentenceRoleNode from '../components/SentenceRoleNode'
+import SentenceElNode from '../components/SentenceElNode'
 
 export default {
   name: 'BTree',
@@ -39,18 +39,17 @@ export default {
   },
 
   computed: {
-
     nodeComponent () {
       if (this.nodeValue.unitClass === 'clause' || this.nodeValue.unitClass === 'root') {
-        return 'BClauseNode'
+        return 'ClauseNode'
       }
 
       if (this.nodeValue.unitClass === 'sentence_el') {
-        return 'BSentenceElNode'
+        return 'SentenceElNode'
       }
 
       if (this.nodeValue.unitClass === 'sentence_role') {
-        return 'BSentenceRoleNode'
+        return 'SentenceRoleNode'
       }
     }
   }

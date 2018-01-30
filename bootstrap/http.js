@@ -1,4 +1,4 @@
-'use strict'
+
 
 /*
 |--------------------------------------------------------------------------
@@ -10,17 +10,18 @@
 |
 */
 
-const app = require('./app')
-const fold = require('adonis-fold')
-const path = require('path')
-const packageFile = path.join(__dirname, '../package.json')
-require('./extend')
+const app = require('./app');
+const fold = require('adonis-fold');
+const path = require('path');
+
+const packageFile = path.join(__dirname, '../package.json');
+require('./extend');
 
 module.exports = function (callback) {
-  fold.Registrar
-    .register(app.providers)
-    .then(() => {
-      /*
+    fold.Registrar
+        .register(app.providers)
+        .then(() => {
+            /*
       |--------------------------------------------------------------------------
       | Register Aliases
       |--------------------------------------------------------------------------
@@ -29,9 +30,9 @@ module.exports = function (callback) {
       | providers can be referenced with short sweet names.
       |
       */
-      fold.Ioc.aliases(app.aliases)
+            fold.Ioc.aliases(app.aliases);
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Register Package File
       |--------------------------------------------------------------------------
@@ -41,11 +42,11 @@ module.exports = function (callback) {
       | to setup autoloading.
       |
       */
-      const Helpers = use('Helpers')
-      const Env = use('Env')
-      Helpers.load(packageFile, fold.Ioc)
+            const Helpers = use('Helpers');
+            const Env = use('Env');
+            Helpers.load(packageFile, fold.Ioc);
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Register Events
       |--------------------------------------------------------------------------
@@ -54,9 +55,9 @@ module.exports = function (callback) {
       | events.js file.
       |
       */
-      require('./events')
+            require('./events');
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Load Middleware And Routes
       |--------------------------------------------------------------------------
@@ -65,10 +66,10 @@ module.exports = function (callback) {
       | require defined files for same.
       |
       */
-      use(Helpers.makeNameSpace('Http', 'kernel'))
-      use(Helpers.makeNameSpace('Http', 'routes'))
+            use(Helpers.makeNameSpace('Http', 'kernel'));
+            use(Helpers.makeNameSpace('Http', 'routes'));
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Load Websocket Channels And Middleware
       |--------------------------------------------------------------------------
@@ -77,10 +78,10 @@ module.exports = function (callback) {
       | server.
       |
       */
-      use(Helpers.makeNameSpace('Ws', 'kernel'))
-      use(Helpers.makeNameSpace('Ws', 'socket'))
+            use(Helpers.makeNameSpace('Ws', 'kernel'));
+            use(Helpers.makeNameSpace('Ws', 'socket'));
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Load Database Factory
       |--------------------------------------------------------------------------
@@ -89,9 +90,9 @@ module.exports = function (callback) {
       | autoload it to be used inside the entire application.
       |
       */
-      use(Helpers.databasePath('factory'))
+            use(Helpers.databasePath('factory'));
 
-      /*
+            /*
       |--------------------------------------------------------------------------
       | Start Http Server
       |--------------------------------------------------------------------------
@@ -99,11 +100,11 @@ module.exports = function (callback) {
       | We are all set to fire the Http Server and start receiving new requests.
       |
       */
-      const Server = use('Adonis/Src/Server')
-      Server.listen(Env.get('HOST'), Env.get('PORT'))
-      if (typeof (callback) === 'function') {
-        callback()
-      }
-    })
-    .catch((error) => console.error(error.stack))
-}
+            const Server = use('Adonis/Src/Server');
+            Server.listen(Env.get('HOST'), Env.get('PORT'));
+            if (typeof (callback) === 'function') {
+                callback();
+            }
+        })
+        .catch((error) => console.error(error.stack));
+};

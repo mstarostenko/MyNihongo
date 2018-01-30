@@ -1,9 +1,9 @@
-'use strict'
 
-const Env = use('Env')
+
+const Env = use('Env');
 
 module.exports = {
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Session Driver
   |--------------------------------------------------------------------------
@@ -14,9 +14,9 @@ module.exports = {
   | Available Options are :-
   | cookie, file, redis
   */
-  driver: Env.get('SESSION_DRIVER', 'cookie'),
+    driver: Env.get('SESSION_DRIVER', 'cookie'),
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Cookie Name
   |--------------------------------------------------------------------------
@@ -25,9 +25,9 @@ module.exports = {
   | Cookie name is required even if you are not using cookie driver.
   |
   */
-  cookie: 'adonis-session',
+    cookie: 'adonis-session',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Session Age
   |--------------------------------------------------------------------------
@@ -36,9 +36,9 @@ module.exports = {
   | minutes of inactivity.
   |
   */
-  age: 120,
+    age: 120,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Clear on browser close
   |--------------------------------------------------------------------------
@@ -47,9 +47,9 @@ module.exports = {
   | by setting below value to true. Also it will disregard age parameter.
   |
   */
-  clearWithBrowser: false,
+    clearWithBrowser: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Http Only Cookie
   |--------------------------------------------------------------------------
@@ -58,9 +58,9 @@ module.exports = {
   | by document.cookie.
   |
   */
-  httpOnly: true,
+    httpOnly: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Same site only
   |--------------------------------------------------------------------------
@@ -70,9 +70,9 @@ module.exports = {
   | https://tools.ietf.org/html/draft-west-first-party-cookies-07
   |
   */
-  sameSite: true,
+    sameSite: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Domain
   |--------------------------------------------------------------------------
@@ -81,9 +81,9 @@ module.exports = {
   | domain. For single and subdomains use. ".adonisjs.com"
   |
   */
-  domain: null,
+    domain: null,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Path
   |--------------------------------------------------------------------------
@@ -92,9 +92,9 @@ module.exports = {
   | it anywhere on your website. Set it to /
   |
   */
-  path: '/',
+    path: '/',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Secure
   |--------------------------------------------------------------------------
@@ -103,9 +103,9 @@ module.exports = {
   | are only served over HTTPS.
   |
   */
-  secure: false,
+    secure: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | File Driver Config
   |--------------------------------------------------------------------------
@@ -115,8 +115,8 @@ module.exports = {
   | created inside storage directory.
   |
   */
-  file: {
-    directory: 'sessions'
-  }
+    file: {
+        directory: 'sessions',
+    },
 
-}
+};

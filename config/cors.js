@@ -1,7 +1,7 @@
-'use strict'
+
 
 module.exports = {
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Origin
   |--------------------------------------------------------------------------
@@ -10,9 +10,9 @@ module.exports = {
   | define multiple origins as string.
   |
   */
-  origin: false,
+    origin: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Methods
   |--------------------------------------------------------------------------
@@ -20,9 +20,9 @@ module.exports = {
   | Comma seperated HTTP methods to be allowed.
   |
   */
-  methods: 'GET, PUT, POST',
+    methods: 'GET, PUT, POST',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Headers
   |--------------------------------------------------------------------------
@@ -31,9 +31,9 @@ module.exports = {
   | Access-Control-Request-Headers.
   |
   */
-  headers: true,
+    headers: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Expose Headers
   |--------------------------------------------------------------------------
@@ -41,9 +41,9 @@ module.exports = {
   | Expose headers to Access-Control-Expose-Headers.
   |
   */
-  exposeHeaders: false,
+    exposeHeaders: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Credentials
   |--------------------------------------------------------------------------
@@ -51,9 +51,9 @@ module.exports = {
   | Define Access-Control-Allow-Credentials header
   |
   */
-  credentials: false,
+    credentials: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | MaxAge
   |--------------------------------------------------------------------------
@@ -61,5 +61,5 @@ module.exports = {
   | Define Access-Control-Allow-Max-Age
   |
   */
-  maxAge: 90
-}
+    maxAge: 90,
+};

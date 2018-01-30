@@ -1,7 +1,7 @@
-'use strict'
+
 
 module.exports = {
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Content Security Policy
   |--------------------------------------------------------------------------
@@ -14,15 +14,15 @@ module.exports = {
   |   defaultSrc: ['self', '@nonce', 'cdnjs.cloudflare.com']
   | }
   */
-  csp: {
-    directives: {
+    csp: {
+        directives: {
+        },
+        reportOnly: false,
+        setAllHeaders: false,
+        disableAndroid: true,
     },
-    reportOnly: false,
-    setAllHeaders: false,
-    disableAndroid: true
-  },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | X-XSS-Protection
   |--------------------------------------------------------------------------
@@ -31,12 +31,12 @@ module.exports = {
   | by IE and later followed by some other browsers.
   |
   */
-  xss: {
-    enabled: true,
-    enableOnOldIE: false
-  },
+    xss: {
+        enabled: true,
+        enableOnOldIE: false,
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Iframe Options
   |--------------------------------------------------------------------------
@@ -46,9 +46,9 @@ module.exports = {
   | @available options
   | DENY, SAMEORIGIN, ALLOW-FROM http://example.com
   */
-  xframe: 'DENY',
+    xframe: 'DENY',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | No Sniff
   |--------------------------------------------------------------------------
@@ -58,9 +58,9 @@ module.exports = {
   | Javascript. You can disable this behavior by setting nosniff to false.
   |
   */
-  nosniff: true,
+    nosniff: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | No Open
   |--------------------------------------------------------------------------
@@ -69,9 +69,9 @@ module.exports = {
   | a serious security risk. Below options will manage this for you.
   |
   */
-  noopen: true,
+    noopen: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | CSRF Protection
   |--------------------------------------------------------------------------
@@ -80,11 +80,11 @@ module.exports = {
   | routes does have a valid token to execute an action.
   |
   */
-  csrf: {
-    enable: true,
-    methods: ['POST', 'PUT', 'DELETE'],
-    filterUris: [],
-    compareHostAndOrigin: true
-  }
+    csrf: {
+        enable: true,
+        methods: ['POST', 'PUT', 'DELETE'],
+        filterUris: [],
+        compareHostAndOrigin: true,
+    },
 
-}
+};

@@ -1,4 +1,4 @@
-'use strict'
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +15,6 @@
 | Route.resource('user', 'UserController')
 */
 
-const Route = use('Route')
+const Route = use('Route');
 
-Route.any('*', 'NuxtController.render')
+Route.any('*', 'NuxtController.render');

@@ -1,10 +1,10 @@
-'use strict'
 
-const Env = use('Env')
+
+const Env = use('Env');
 
 module.exports = {
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | App Key
   |--------------------------------------------------------------------------
@@ -13,9 +13,9 @@ module.exports = {
   | to encrypted cookies, sessions and other sensitive data.
   |
   */
-  appKey: Env.get('APP_KEY'),
+    appKey: Env.get('APP_KEY'),
 
-  encryption: {
+    encryption: {
     /*
     |--------------------------------------------------------------------------
     | Encryption algorithm
@@ -28,10 +28,10 @@ module.exports = {
     | aes-128-cbc requires 16 characters long string
     |
     */
-    algorithm: 'aes-256-cbc'
-  },
+        algorithm: 'aes-256-cbc',
+    },
 
-  http: {
+    http: {
     /*
     |--------------------------------------------------------------------------
     | Allow Method Spoofing
@@ -43,9 +43,9 @@ module.exports = {
     | below value to true.
     |
     */
-    allowMethodSpoofing: true,
+        allowMethodSpoofing: true,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Trust Proxy
     |--------------------------------------------------------------------------
@@ -57,9 +57,9 @@ module.exports = {
     | values. Read documentation for that.
     |
     */
-    trustProxy: false,
+        trustProxy: false,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Subdomains
     |--------------------------------------------------------------------------
@@ -71,9 +71,9 @@ module.exports = {
     | virk.cheatsheet.adonisjs.com - offset - 3
     |
     */
-    subdomainOffset: 2,
+        subdomainOffset: 2,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Set Powered By
     |--------------------------------------------------------------------------
@@ -82,9 +82,9 @@ module.exports = {
     | true. Consider this as a way of saying thanks to us.
     |
     */
-    setPoweredBy: true,
+        setPoweredBy: true,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | JSONP Callback
     |--------------------------------------------------------------------------
@@ -93,10 +93,10 @@ module.exports = {
     | in request url.
     |
     */
-    jsonpCallback: 'callback'
-  },
+        jsonpCallback: 'callback',
+    },
 
-  views: {
+    views: {
     /*
     |--------------------------------------------------------------------------
     | Cache Views
@@ -106,9 +106,9 @@ module.exports = {
     | production to optimize view loading time.
     |
     */
-    cache: Env.get('CACHE_VIEWS', true),
+        cache: Env.get('CACHE_VIEWS', true),
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Service Injection
     |--------------------------------------------------------------------------
@@ -117,10 +117,10 @@ module.exports = {
     | IoC container. Setting it to false will disable this feature.
     |
     */
-    injectServices: false
-  },
+        injectServices: false,
+    },
 
-  static: {
+    static: {
     /*
     |--------------------------------------------------------------------------
     | Dot Files
@@ -134,9 +134,9 @@ module.exports = {
     | ignore, deny, allow
     |
     */
-    dotfiles: 'ignore',
+        dotfiles: 'ignore',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | ETag
     |--------------------------------------------------------------------------
@@ -144,9 +144,9 @@ module.exports = {
     | Enable or disable etag generation
     |
     */
-    etag: true,
+        etag: true,
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Extensions
     |--------------------------------------------------------------------------
@@ -156,10 +156,10 @@ module.exports = {
     | that exists will be served. Example: ['html', 'htm'].
     |
     */
-    extensions: false
-  },
+        extensions: false,
+    },
 
-  locales: {
+    locales: {
     /*
     |--------------------------------------------------------------------------
     | Driver
@@ -171,9 +171,9 @@ module.exports = {
     | file, database
     |
     */
-    driver: 'file',
+        driver: 'file',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Default Locale
     |--------------------------------------------------------------------------
@@ -183,9 +183,9 @@ module.exports = {
     | based on HTTP headers/query string.
     |
     */
-    locale: 'en',
+        locale: 'en',
 
-    /*
+        /*
     |--------------------------------------------------------------------------
     | Fallback Locale
     |--------------------------------------------------------------------------
@@ -193,6 +193,6 @@ module.exports = {
     | Fallback locale to be used when actual locale is not supported.
     |
     */
-    fallbackLocale: 'en'
-  }
-}
+        fallbackLocale: 'en',
+    },
+};

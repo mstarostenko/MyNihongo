@@ -1,10 +1,10 @@
-'use strict'
 
-const Config = use('Config')
+
+const Config = use('Config');
 
 module.exports = {
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Authenticator
   |--------------------------------------------------------------------------
@@ -17,9 +17,9 @@ module.exports = {
   | Available Serializers - Lucid, Database
   |
   */
-  authenticator: 'session',
+    authenticator: 'session',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Session Authenticator
   |--------------------------------------------------------------------------
@@ -28,15 +28,15 @@ module.exports = {
   | state for a given user.
   |
   */
-  session: {
-    serializer: 'Lucid',
-    model: 'App/Model/User',
-    scheme: 'session',
-    uid: 'email',
-    password: 'password'
-  },
+    session: {
+        serializer: 'Lucid',
+        model: 'App/Model/User',
+        scheme: 'session',
+        uid: 'email',
+        password: 'password',
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Basic Auth Authenticator
   |--------------------------------------------------------------------------
@@ -44,15 +44,15 @@ module.exports = {
   | Basic Authentication works on Http Basic auth header.
   |
   */
-  basic: {
-    serializer: 'Lucid',
-    model: 'App/Model/User',
-    scheme: 'basic',
-    uid: 'email',
-    password: 'password'
-  },
+    basic: {
+        serializer: 'Lucid',
+        model: 'App/Model/User',
+        scheme: 'basic',
+        uid: 'email',
+        password: 'password',
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | JWT Authenticator
   |--------------------------------------------------------------------------
@@ -61,16 +61,16 @@ module.exports = {
   | Http Authorization header.
   |
   */
-  jwt: {
-    serializer: 'Lucid',
-    model: 'App/Model/User',
-    scheme: 'jwt',
-    uid: 'email',
-    password: 'password',
-    secret: Config.get('app.appKey')
-  },
+    jwt: {
+        serializer: 'Lucid',
+        model: 'App/Model/User',
+        scheme: 'jwt',
+        uid: 'email',
+        password: 'password',
+        secret: Config.get('app.appKey'),
+    },
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | API Authenticator
   |--------------------------------------------------------------------------
@@ -82,10 +82,10 @@ module.exports = {
   | in documentation
   |
   */
-  api: {
-    serializer: 'Lucid',
-    model: 'App/Model/Token',
-    scheme: 'api'
-  }
+    api: {
+        serializer: 'Lucid',
+        model: 'App/Model/Token',
+        scheme: 'api',
+    },
 
-}
+};

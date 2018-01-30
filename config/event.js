@@ -1,8 +1,8 @@
-'use strict'
+
 
 module.exports = {
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | WildCard
   |--------------------------------------------------------------------------
@@ -11,9 +11,9 @@ module.exports = {
   | instead of always using full names.
   |
   */
-  wildcard: true,
+    wildcard: true,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Handle New Listener
   |--------------------------------------------------------------------------
@@ -21,9 +21,9 @@ module.exports = {
   | Whether or not to emit new listener event, it's set to false by default.
   |
   */
-  newListener: false,
+    newListener: false,
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Max Listeners/Event
   |--------------------------------------------------------------------------
@@ -32,6 +32,6 @@ module.exports = {
   | seems to be a good number.
   |
   */
-  maxListeners: 10
+    maxListeners: 10,
 
-}
+};
